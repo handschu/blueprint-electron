@@ -1,0 +1,43 @@
+.nav-list {
+    list-style: none;
+    padding-left: 25px;
+}
+
+.nav-list li {
+    padding-bottom: 1px;
+}
+
+.nav-list a {
+    background-color: #f2f2f2;
+    color: #000;
+    border: 1px solid #a9a9a9;
+}
+
+.sidenav {
+    position: fixed;
+    height: 100%;
+    z-index: 1;
+    margin: 0;
+    left: 0;
+    background: rgb(248, 249, 250);
+    overflow-x: hidden;
+    transition: 0.5s;
+    overflow-y: hidden;
+    text-align: right;
+    margin-top: 70px;
+}
+
+.toggle-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(240, 255, 255, 0.00);
+    height: 100%;
+    border: solid 0 white;
+    border-right: solid 4px darkgray;
+    outline: none;
+}
+
+.active {
+    background-color: #d9d9d9 !important;
+}

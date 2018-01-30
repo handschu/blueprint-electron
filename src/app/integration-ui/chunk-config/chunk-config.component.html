@@ -1,0 +1,17 @@
+<div class="modal-header">
+  <h4 class="modal-title">Wählen sie die Module aus!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="form-group ml-2">
+  <div class="checkbox" *ngFor="let comp of components">
+    <label>
+      <input [checked]="checked(comp)" (change)="onFilterChange($event)" type="checkbox" [value]="comp">{{comp}}</label>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="changeConfig()">Update </button>
+  <button type="button" class="btn btn-outline-dark" (click)="close()">Close</button>
+</div>

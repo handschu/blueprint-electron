@@ -1,0 +1,12 @@
+<div id="mySidenav" class="sidenav" [style.width]="width + 'px'">
+    <div class="mt-3" *ngIf="width > 28">
+        <ul *ngFor="let chunk of chunks" class="nav-list text-left">
+            <li><a class="nav-link" routerLink="/{{chunk}}" routerLinkActive="active">{{chunk}}</a></li>
+        </ul>
+    </div>
+
+    <button (click)="toggleNavigation()" class="toggle-button">
+        <span *ngIf="width < 28" class="fa fa-angle-right" aria-hidden="true"></span>
+        <span *ngIf="width >= 28" class="fa fa-angle-left" aria-hidden="true"></span>
+    </button>
+</div>
