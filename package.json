@@ -2,7 +2,7 @@
   "name": "blueprint-electron",
   "version": "0.1.0",
   "description": "Electron Blueprint",
-  "main": "./main.ts",
+  "main": "./out-tsc/main.js",
   "repository": "https://mdk-bs-dev02.test-server.ag/blueprints/blueprint-electron",
   "author": "handschu <sven.handschumacher@adesso.de>",
   "license": "adesso AG",

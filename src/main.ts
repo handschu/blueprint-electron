@@ -1,19 +1,14 @@
-import { app, net, BrowserWindow, ipcMain } from 'electron';
-import * as path from 'path';
-import * as url from 'url';
+import { app, BrowserWindow, ipcMain } from 'electron';
 import * as Rx from 'rxjs/Rx';
 import * as http from 'http';
-import * as sqlite3 from 'sqlite3';
-import "reflect-metadata";
-import { createConnection, Connection, getConnectionManager, getConnection } from 'typeorm';
-
-
+import {Menu} from 'electron';
 
 const ngServer = 'http://localhost:4200';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win: Electron.BrowserWindow;
+
 
 
 async function createWindow() {
@@ -25,8 +20,17 @@ async function createWindow() {
     });
 
     // and load the index.html of the app.
-    win.loadURL(`file://${__dirname}/../../dist/index.html`);
+    win.loadURL(`file://${__dirname}/../dist/index.html`);
 
+    const menu = Menu.buildFromTemplate([{
+            label: 'Datei',
+            submenu: [
+                {role: 'quit'}
+            ]
+        }]
+    );
+
+    win.setMenu(menu)
     //win.loadURL(ngServer);
 
     // Open the DevTools.
