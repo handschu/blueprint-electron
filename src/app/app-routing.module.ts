@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
-  {path: 'homepage', loadChildren: './integration-ui/integration-ui.module.ts#IntegrationUiModule'
-  },
+  {path: 'homepage', loadChildren: './integration-ui/integration-ui.module.ts#IntegrationUiModule'},
+    {path: 'product-a', loadChildren: './product-a/product-a.module.ts#ProductAModule'}
 ];
 
 @NgModule({
