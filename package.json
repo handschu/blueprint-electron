@@ -11,7 +11,7 @@
     "npmstart": "npm run electron:rebuild && yarn run build:node && npm run build:app && npm run start:node",
     "start:node": "./node_modules/.bin/electron .",
     "build": "yarn run build:app",
-    "build:app": "ng build --dev --output-hashing none --named-chunks true --base-href \"\"",
+    "build:app": "ng build --prod --output-hashing none --named-chunks true --base-href \"\"",
     "build:node": "tsc -p ./src/tsconfig.app.json",
     "electron:rebuild": "./node_modules/.bin/electron-rebuild",
     "test": "ng test",

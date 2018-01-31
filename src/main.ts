@@ -1,15 +1,14 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { ipcMain } from 'electron';
 import * as Rx from 'rxjs/Rx';
 import * as http from 'http';
 import {Menu} from 'electron';
 
+const {app, BrowserWindow} = require('electron');
 const ngServer = 'http://localhost:4200';
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win: Electron.BrowserWindow;
-
-
 
 async function createWindow() {
 
