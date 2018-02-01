@@ -129,6 +129,7 @@ function getLoadedChunks(folder: string){
 
     files.forEach(file => {
         if(file.includes('chunk') && !file.includes('common') && !file.includes('shared')) {
+            // TODO SvHa: fachlichen Namen aus dem Chunk lesen (properties?)
             chunks.push(file.substring(0, file.indexOf('.')));
         }
     });

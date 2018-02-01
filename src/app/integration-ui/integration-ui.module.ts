@@ -12,7 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { ChunkConfigComponent } from './chunk-config/chunk-config.component';
 
 const routes: Routes = [
-    { path: '', component: HomepageComponent }
+    { path: '', component: HomepageComponent },
+    { path: 'homepage', component: HomepageComponent },
 ];
 
 @NgModule({

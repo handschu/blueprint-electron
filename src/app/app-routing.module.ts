@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
-  {path: 'homepage', loadChildren: './integration-ui/integration-ui.module.ts#IntegrationUiModule'
+  {path: 'integration-ui', loadChildren: './integration-ui/integration-ui.module.ts#IntegrationUiModule'
   },
 ];
 
