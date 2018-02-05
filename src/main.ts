@@ -2,6 +2,11 @@ import { ipcMain } from 'electron';
 import * as Rx from 'rxjs/Rx';
 import * as http from 'http';
 import {Menu} from 'electron';
+import {addPathToRoutes} from "@angular/cli/lib/ast-tools";
+import {log} from "util";
+import {Router, Routes} from '@angular/router';
+import {AppRoutingModule} from "./app/app-routing.module";
+import { RouterModule } from '@angular/router';
 
 const {app, BrowserWindow} = require('electron');
 const ngServer = 'http://localhost:4200';
@@ -33,7 +38,7 @@ async function createWindow() {
     //win.loadURL(ngServer);
 
     // Open the DevTools.
-    //win.webContents.openDevTools();
+    // win.webContents.openDevTools();
 
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
@@ -131,14 +136,17 @@ function getLoadedChunks(folder: string){
         if(file.includes('chunk') && !file.includes('common') && !file.includes('shared')) {
             // TODO SvHa: fachlichen Namen aus dem Chunk lesen (properties?)
             chunks.push(file.substring(0, file.indexOf('.')));
+
+
         }
     });
-    console.log(chunks);
+    console.log("loaded chunks: " + chunks);
     return chunks;
 }
 
 ipcMain.on('REST:UpdateChunks', (event: Electron.Event, chunks: string[]) => {
-    for (const chunk of getLoadedChunks('/dist')){
+
+    for (const chunk of getLoadedChunks('/dist')) {
         if (!chunks.includes(chunk)) {
             deleteChunk(chunk);
         }
@@ -146,11 +154,11 @@ ipcMain.on('REST:UpdateChunks', (event: Electron.Event, chunks: string[]) => {
 
     for (const chunk of chunks){
         if (!getLoadedChunks('dist').includes(chunk)) {
-            downloadChunk(chunk);
+           downloadChunk(chunk);
         }
     }
 
-    event.sender.send('REST:UpdateChunks:Response', true);
+    event.sender.send('REST:UpdateChunks:Response', getLoadedChunks('dist'));
 
 });
 

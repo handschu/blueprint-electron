@@ -1,49 +1,42 @@
-# MdkClient
+# MDK BS - Electron Blueprint
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
+## Abstract
 
-## Setting up Environment
+Dieser Blueprint zeigt eine Electron-Anwendung mit der Integration-Oberfläche für die zu entwickelnden MDK-Produkte.
+Er enthält das dynamische Nachladen von Modulen (Produkten), den online/offline Login sowie die client-seitige Persistenz-Lösung.
 
-Install the following dependencies to run the prototype:
+
+* See Jira: [MDK-89](https://mdk-jira.test-server.ag/browse/MDK-89).
+* See Confluence: [Blueprint Electron](https://mdk-confluence.test-server.ag/display/MDK/Integration-UI).
+
+## Einrichtung der Umgebung
+
+Folgende Abhängigkeiten müssen installiert werden:
 
 Node.js: https://nodejs.org/en/
 
 Yarn: https://yarnpkg.com/en/docs/install
-
-
-Run the following Commands in Command Line to install additional dependencies:
 
 Windows Built Tools: `npm install --global --production windows-build-tools`
 
 node-gyp: `npm install --global node-gyp`
 
 
-## Start Electron with Webfrontend
+## Start der Anwendung mit Webfrontend
 
 ### Yarn
-Run `yarn start:backend` to run the Spring Boot Backend for the project.
 
-Run `yarn start` for build and run the full project.
+`yarn start` Build und Start des gesamten Projektes
 
-Run `yarn start:node` if you have built the project before.
-
-### NPM
-
-Run `npm run start:backend` to run the Spring Boot Backend for the project.
-
-Run `npm run npmstart` for build and run the full project.
-
-Run `npm run start:node` if you have built the project before.
-
-
-In case of errors because of missing Python run following command:
-
-npm --add-python-to-path='true' --debug install --global windows-build-tools
+`yarn start:node` nur Start, wenn Projekt zuvor gebaut wurde 
 
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+`ng serve` für den Development Server. Erreichbar unter `http://localhost:4200/`. Die Anwendung wird automatisch aktuelisiert, wenn sich die Sourcen ändern.
+
+
+
 
 ## Code scaffolding
 
@@ -61,7 +54,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

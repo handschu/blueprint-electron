@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
-  {path: '', redirectTo: '/homepage', pathMatch: 'full'},
-  {path: 'integration-ui', loadChildren: './integration-ui/integration-ui.module.ts#IntegrationUiModule'
-  },
+export const routes: Routes = [
+  {path: '', redirectTo: '/integration-ui', pathMatch: 'full'},
+  {path: 'integration-ui', loadChildren: 'app/integration-ui/integration-ui.module#IntegrationUiModule'}
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, {useHash: true}),
-],
+    RouterModule.forRoot(routes, {useHash: true})
+  ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+
+}

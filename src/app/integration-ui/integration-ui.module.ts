@@ -13,7 +13,7 @@ import { ChunkConfigComponent } from './chunk-config/chunk-config.component';
 
 const routes: Routes = [
     { path: '', component: HomepageComponent },
-    { path: 'homepage', component: HomepageComponent },
+    { path: 'homepage', component: HomepageComponent }
 ];
 
 @NgModule({
@@ -38,6 +38,6 @@ const routes: Routes = [
         ChunkConfigComponent
     ],
     providers: [ChunkLoadingService],
-    entryComponents: [ChunkConfigComponent]
+    entryComponents: [HomepageComponent]
 })
 export class IntegrationUiModule { }
