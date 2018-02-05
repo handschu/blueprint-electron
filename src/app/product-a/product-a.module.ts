@@ -1,12 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductAComponent } from './product-a.component';
-import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-
-const routes: Routes = [
-    { path: '', component: ProductAComponent }
-];
+import {ProductARoutingModule} from "./product-a-routing.module";
 
 @NgModule({
     declarations: [
@@ -15,10 +11,11 @@ const routes: Routes = [
   imports: [
       FormsModule,
       CommonModule,
-      RouterModule.forChild(routes),
+      ProductARoutingModule,
   ],
     exports: [
         ProductAComponent
-    ]
+    ],
+    entryComponents: [ProductAComponent]
 })
 export class ProductAModule { }
